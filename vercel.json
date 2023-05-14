@@ -1,0 +1,17 @@
+{
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "src/*",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:match*",
+      "destination": "src/main.ts"
+    }
+  ]
+}

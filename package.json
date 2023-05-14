@@ -1,0 +1,16 @@
+{
+  "name": "softstation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vercel dev"
+  },
+  "dependencies": {
+    "vclight": "^1.1.1",
+    "vclight-router": "^1.1.1",
+    "vercel": "^28.18.3"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.14.2"
+  }
+}
