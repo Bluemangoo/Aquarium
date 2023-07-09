@@ -6,12 +6,19 @@
     {
       "src": "src/*",
       "use": "@vercel/node"
+    },
+    {
+      "src": "static/*",
+      "use": "@vercel/static"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/:match*",
-      "destination": "src/main.ts"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts"
     }
   ]
 }

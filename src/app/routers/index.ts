@@ -1,7 +1,7 @@
 import router from "../router";
-import { readFileSync } from "fs";
+// import { readFileSync } from "fs";
+import bucket from "../bucket";
 
 router.on("/", async function(data, response) {
-    response.contentType = "text/html";
-    response.response = readFileSync(process.cwd() + "/src/public/index.html");
+    response.response=await bucket.get("adoptium").getUrl({})
 })
