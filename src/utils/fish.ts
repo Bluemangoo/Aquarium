@@ -1,11 +1,12 @@
 import * as fs from "fs";
-import { GetUrl, GetVersion} from "../types/resolver";
+import { GetUrl, GetVersion } from "../types/resolver";
 
 type Meta = {
-    name: string,
-    icon: string,
-    iconDark: string,
-    description: string
+    name: string;
+    icon: string;
+    iconDark: string;
+    description: string;
+    site: string;
 }
 
 export class Fish {
@@ -30,6 +31,9 @@ export class Fish {
             }
             if (meta.description == undefined) {
                 meta.icon = "No description";
+            }
+            if (meta.site == undefined) {
+                meta.site = "./";
             }
         }
         return <Meta>this._meta;

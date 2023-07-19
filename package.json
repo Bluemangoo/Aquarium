@@ -8,8 +8,8 @@
   "dependencies": {
     "axios": "^1.4.0",
     "vclight": "^1.1.1",
-    "vclight-router": "^1.1.4",
-    "vercel": "^30.2.1"
+    "vclight-router": "^1.1.6",
+    "vercel": "^31.0.1"
   },
   "devDependencies": {
     "@vercel/node": "^2.14.3"

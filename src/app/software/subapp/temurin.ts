@@ -31,4 +31,10 @@ sub.getUrl = async function(query: Query) {
     return result;
 };
 
+sub.getVersion = async function(query) {
+    const url = await this.getUrl(query);
+    const parse1 = url.split("hotspot_");
+    return parse1[parse1.length-1].slice(0,-4);
+};
+
 bucket.add(sub);
