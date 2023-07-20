@@ -6,6 +6,7 @@
   "site": "https://adoptium.net/temurin/",
   "tags": [
     "运行时",
-    "开发工具包"
+    "开发工具包",
+    "开源"
   ]
 }

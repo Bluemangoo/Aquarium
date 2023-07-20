@@ -1,0 +1,9 @@
+{
+  "name": "Everything",
+  "icon": "/static/icon/everything.png",
+  "description": "基于名称快速定位文件和文件夹。",
+  "site": "https://www.voidtools.com/",
+  "tags": [
+    "工具"
+  ]
+}

@@ -25,10 +25,10 @@ export class Fish {
                 meta.name = this.id;
             }
             if (meta.icon == undefined) {
-                meta.icon = "/static/default-icon.jpg";
+                meta.icon = "/static/default-icon.png";
             }
             if (meta.iconDark == undefined) {
-                meta.iconDark = "/static/default-icon.jpg";
+                meta.iconDark = "/static/default-icon.png";
             }
             if (meta.description == undefined) {
                 meta.icon = "No description";

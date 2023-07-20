@@ -1,0 +1,11 @@
+{
+  "name": "Hello Minecraft Launcher",
+  "icon": "/static/icon/hmcl.png",
+  "description": "HMCL 是一个免费、开源的 Minecraft 启动器，允许玩家方便快捷地安装、管理、运行游戏。",
+  "site": "https://hmcl.huangyuhui.net/",
+  "tags": [
+    "游戏",
+    "Minecraft",
+    "开源"
+  ]
+}
