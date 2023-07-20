@@ -1,4 +1,4 @@
-import { Fish } from "../utils/fish";
+import { Fish } from "../types/fish";
 
 class Bucket {
     add(software: Fish) {

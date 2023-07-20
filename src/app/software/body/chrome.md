@@ -1,0 +1,5 @@
+Google Chrome（简称Chrome）是Google开发的免费网页浏览器，过去也用Chrome称呼浏览器的外框。Chrome相应的开放源代码计划名为Chromium，而Chrome本身不是自由软件，未开放源代码。
+
+Chrome代码是基于其他开放源代码软件所编写，包括Apple WebKit和Mozilla Firefox，并开发出称为“V8”的高性能JavaScript引擎。Chrome的整体发展目标是提升稳定、速度和安全，并创造出简单且有效率的用户界面。CNET旗下的Download.com网站评出的2008年6月最佳Windows应用程序，Chrome排名首位。
+
+根据StatCounter统计，截至2022年4月底，Chrome在全球浏览器中有64.36%的占有率。

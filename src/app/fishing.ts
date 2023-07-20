@@ -1,1 +1,5 @@
+import "./software/subapp/bilibili"
+import "./software/subapp/chrome"
+import "./software/subapp/clion"
+import "./software/subapp/cloud-music"
 import "./software/subapp/temurin"

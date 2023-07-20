@@ -1,4 +1,4 @@
-import { Fish } from "../../../utils/fish";
+import { Fish } from "../../../types/fish";
 import bucket from "../../bucket";
 import { Query } from "../../../types/resolver";
 import axios from "axios";

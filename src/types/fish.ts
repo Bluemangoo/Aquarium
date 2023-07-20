@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { GetUrl, GetVersion } from "../types/resolver";
+import { GetUrl, GetVersion } from "./resolver";
 
 type Meta = {
     name: string;
@@ -7,6 +7,7 @@ type Meta = {
     iconDark: string;
     description: string;
     site: string;
+    tags: string[];
 }
 
 export class Fish {
@@ -35,6 +36,9 @@ export class Fish {
             if (meta.site == undefined) {
                 meta.site = "./";
             }
+            if (meta.tags == undefined) {
+                meta.tags = [];
+            }
         }
         return <Meta>this._meta;
     }
@@ -53,6 +57,14 @@ export class Fish {
 
     get description(): string {
         return this.meta.description;
+    }
+
+    get site(): string {
+        return this.meta.site;
+    }
+
+    get tags(): string[] {
+        return this.meta.tags;
     }
 
     get body(): string {
