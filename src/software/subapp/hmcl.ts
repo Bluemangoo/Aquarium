@@ -1,6 +1,6 @@
 import { Fish } from "../../types/fish";
 import bucket from "../bucket";
-import FileCacher from "../../types/FileCacher";
+import FileCacher from "../../types/fileCacher";
 
 const sub = new Fish("hmcl", ["hello-minecraft-launcher", "hellominecraftlauncher"]);
 

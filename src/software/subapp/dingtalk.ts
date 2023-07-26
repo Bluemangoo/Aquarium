@@ -1,5 +1,5 @@
 import { Fish } from "../../types/fish";
-import FileCacher from "../../types/FileCacher";
+import FileCacher from "../../types/fileCacher";
 import bucket from "../bucket";
 
 const sub = new Fish("dingtalk", ["dingding", "ding-ding"]);
