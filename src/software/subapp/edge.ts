@@ -1,5 +1,5 @@
-import { Fish } from "../../../types/fish";
-import bucket from "../../bucket";
+import { Fish } from "../../types/fish";
+import bucket from "../bucket";
 
 const sub = new Fish("edge", ["microsoft-edge", "microsoftedge"]);
 

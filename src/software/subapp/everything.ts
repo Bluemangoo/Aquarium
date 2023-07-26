@@ -1,7 +1,7 @@
 //Warning: this resolver uses regex
-import { Fish } from "../../../types/fish";
-import FileCacher from "../../../types/FileCacher";
-import bucket from "../../bucket";
+import { Fish } from "../../types/fish";
+import FileCacher from "../../types/FileCacher";
+import bucket from "../bucket";
 
 const sub = new Fish("everything");
 

@@ -3,6 +3,7 @@ import { Fish } from "../types/fish";
 class Bucket {
     add(software: Fish) {
         this.map[software.id] = software;
+        this.fishes[software.id] = software;
         for (const alias of software.alias) {
             this.map[alias] = software;
         }
@@ -13,6 +14,7 @@ class Bucket {
     }
 
     private map: { [key: string]: Fish } = {};
+    public fishes: { [key: string]: Fish } = {};
 }
 
 const bucket = new Bucket();

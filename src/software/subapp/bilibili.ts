@@ -1,6 +1,6 @@
-import { Fish } from "../../../types/fish";
+import { Fish } from "../../types/fish";
 import axios from "axios";
-import bucket from "../../bucket";
+import bucket from "../bucket";
 
 const sub = new Fish("bilibili");
 

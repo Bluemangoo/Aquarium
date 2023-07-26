@@ -1,10 +1,10 @@
-import { Fish } from "../../../types/fish";
-import bucket from "../../bucket";
-import { Query } from "../../../types/resolver";
+import { Fish } from "../../types/fish";
+import bucket from "../bucket";
+import { Query } from "../../types/resolver";
 import axios from "axios";
-import notNull from "../../../utils/notNull";
+import notNull from "../../utils/notNull";
 import * as path from "path";
-import github from "../../../utils/github";
+import github from "../../utils/github";
 
 const sub = new Fish("temurin", ["adoptium", "adoptium-jdk", "temurin-jdk"]);
 

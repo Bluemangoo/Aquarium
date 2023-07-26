@@ -1,6 +1,6 @@
-import { Fish } from "../../../types/fish";
-import Jetbrains from "../../../utils/jetbrains";
-import bucket from "../../bucket";
+import { Fish } from "../../types/fish";
+import Jetbrains from "../../utils/jetbrains";
+import bucket from "../bucket";
 
 const sub = new Fish("idea",["ideau","intellij","intellij-idea","intellijidea"]);
 

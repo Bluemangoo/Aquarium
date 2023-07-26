@@ -1,5 +1,5 @@
 import VCLightRouter, { RequestContext, ResponseContext } from "vclight-router";
-import CONTENT_TYPE from "../static/const/CONTENT_TYPE";
+import CONTENT_TYPE from "../enums/CONTENT_TYPE";
 import { ServerResponse } from "http";
 import { VercelRequest } from "@vercel/node";
 import VCLight, { Response } from "vclight";
@@ -132,4 +132,4 @@ const apiRouter = new ApiRouter();
 
 export default apiRouter;
 
-import "./routers/api"
+import "./api"

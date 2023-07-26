@@ -1,5 +1,5 @@
-import apiRouter from "../../../apiRouter";
-import bucket from "../../../bucket";
+import apiRouter from "../../apiRouter";
+import bucket from "../../../software/bucket";
 
 apiRouter.api("/download/", async function(request, response) {
     const fish = bucket.get(request.fish);
