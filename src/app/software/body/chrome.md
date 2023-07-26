@@ -1,5 +1,17 @@
-Google Chrome（简称Chrome）是Google开发的免费网页浏览器，过去也用Chrome称呼浏览器的外框。Chrome相应的开放源代码计划名为Chromium，而Chrome本身不是自由软件，未开放源代码。
+Chrome，不一样的浏览器体验
 
-Chrome代码是基于其他开放源代码软件所编写，包括Apple WebKit和Mozilla Firefox，并开发出称为“V8”的高性能JavaScript引擎。Chrome的整体发展目标是提升稳定、速度和安全，并创造出简单且有效率的用户界面。CNET旗下的Download.com网站评出的2008年6月最佳Windows应用程序，Chrome排名首位。
+## 利用 Google 的强大功能浏览网页
 
-根据StatCounter统计，截至2022年4月底，Chrome在全球浏览器中有64.36%的占有率。
+通过 Gmail、Google Pay 和 Google 助理等 Google 应用，Chrome 可帮助您保持工作效率并充分利用您的浏览器。
+
+## 掌控您的网上安全
+
+Chrome 一直致力于保护您的在线数据和隐私。凭借易用的隐私控制设置，Chrome 可让您按照自己的喜好自定义相关设置和浏览体验。
+
+## 快捷易用的浏览工具
+
+从密码检查功能、深色模式到 Google 地址栏，Chrome 可帮助您完成任务并保障在线安全。
+
+## 不可不知的 Chrome 基本技巧
+
+运用可助您省时的诀窍，跨设备同步 Chrome、掌握键盘快捷键、整理标签页以及执行其他操作，从而充分利用浏览器的各项功能。
