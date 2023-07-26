@@ -2,6 +2,7 @@ import VCLight from "vclight";
 import router from "./app/router";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import apiRouter from "./app/apiRouter";
+import keepFile from "./app/keepFile";
 
 module.exports = async function(request: VercelRequest, response: VercelResponse) {
     const app = new VCLight();
@@ -10,5 +11,6 @@ module.exports = async function(request: VercelRequest, response: VercelResponse
     } else {
         app.use(router);
     }
+    app.use(keepFile);
     await app.fetch(request, response);
 };

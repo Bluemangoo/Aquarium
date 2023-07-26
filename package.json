@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "serve": "vercel dev"
+    "serve": "vercel dev",
+    "postinstall": "ts-node prebuild"
   },
   "dependencies": {
     "axios": "^1.4.0",
@@ -14,6 +15,9 @@
   },
   "devDependencies": {
     "@types/ejs": "^3.1.2",
-    "@vercel/node": "^2.14.3"
+    "@types/node": "^20.4.5",
+    "@vercel/node": "^2.14.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
   }
 }

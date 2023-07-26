@@ -12,10 +12,6 @@ class Renderer {
         return ejs.render(fs.readFileSync(process.cwd() + template).toString(), { bucket });
     }
 
-    redirect(to: string, template: string = "/src/app/layout/redirect.ejs") {
-        return ejs.render(fs.readFileSync(process.cwd() + template).toString(), { to });
-    }
-
     _404(template: string = "/src/app/layout/404.ejs") {
         return ejs.render(fs.readFileSync(process.cwd() + template).toString(), {});
     }

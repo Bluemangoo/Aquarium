@@ -1,10 +1,9 @@
 import router from "../router";
-// import { readFileSync } from "fs";
-import bucket from "../../software/bucket";
 import CONTENT_TYPE from "../../enums/CONTENT_TYPE";
 import renderer from "../renderer";
+import checkPrebuildFileOr from "../../utils/checkPrebuildFile";
 
 router.on("/", async function(data, response) {
     response.contentType = CONTENT_TYPE.HTML;
-    response.response = renderer.index();
+    response.response = checkPrebuildFileOr("index.html", renderer.index);
 });
