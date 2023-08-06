@@ -1,0 +1,13 @@
+@media (prefers-color-scheme: dark) {
+    .icon-github {
+        background-image: url("/static/img/dark/github.svg");
+    }
+
+    .icon-search {
+        background-image: url("/static/img/dark/search.svg");
+    }
+
+    .icon-settings {
+        background-image: url("/static/img/dark/settings.svg");
+    }
+}

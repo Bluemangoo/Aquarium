@@ -13,3 +13,6 @@ yarn.lock
 pnpm.lock
 .vercel
 .env
+
+# Prebuild
+/src/prebuild/keep.ts

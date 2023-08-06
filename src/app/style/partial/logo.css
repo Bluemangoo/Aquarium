@@ -1,0 +1,10 @@
+#navbar-logo {
+    font-size: x-large;
+    color: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+    #navbar-logo{
+        color: white;
+    }
+}

@@ -3,5 +3,5 @@ import { readFileSync } from "fs";
 
 router.on("/favicon.ico", async function(data, response) {
     response.contentType = "image/x-icon";
-    response.response = readFileSync(process.cwd() + "/src/public/favicon.ico");
+    response.response = readFileSync(process.cwd() + "/src/app/public/favicon.ico");
 })

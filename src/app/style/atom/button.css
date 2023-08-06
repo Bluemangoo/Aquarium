@@ -1,0 +1,5 @@
+.button-none {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+}

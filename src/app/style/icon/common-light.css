@@ -1,0 +1,11 @@
+.icon-github {
+    background-image: url("/static/img/light/github.svg");
+}
+
+.icon-search {
+    background-image: url("/static/img/light/search.svg");
+}
+
+.icon-settings {
+    background-image: url("/static/img/light/settings.svg");
+}
