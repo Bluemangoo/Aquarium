@@ -3,7 +3,7 @@
   "icon": "/static/icon/pycharm.svg",
   "description": "面向专业开发者的 Python IDE",
   "site": "https://www.jetbrains.com/pycharm/",
-  "tag": [
+  "tags": [
     "IDE",
     "Python",
     "Jetbrains"

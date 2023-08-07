@@ -5,6 +5,7 @@ type Meta = {
     name: string;
     icon: string;
     iconDark: string;
+    hasIconDark: boolean;
     description: string;
     site: string;
     tags: string[];
@@ -19,16 +20,18 @@ export class Fish {
 
     private get meta(): Meta {
         if (this._meta == undefined) {
-            this._meta = JSON.parse(fs.readFileSync(`${process.cwd()}/src/app/software/meta/${this.id}.json`).toString());
+            this._meta = JSON.parse(fs.readFileSync(`${process.cwd()}/src/software/meta/${this.id}.json`).toString());
             const meta = <Meta>this._meta;
             if (meta.name == undefined) {
                 meta.name = this.id;
             }
             if (meta.icon == undefined) {
-                meta.icon = "/static/default-icon.png";
+                meta.icon = "/static/icon/default-icon.png";
             }
+            meta.hasIconDark = true;
             if (meta.iconDark == undefined) {
-                meta.iconDark = "/static/default-icon.png";
+                meta.hasIconDark = false;
+                meta.iconDark = "/static/icon/default-icon.png";
             }
             if (meta.description == undefined) {
                 meta.icon = "No description";
@@ -55,6 +58,10 @@ export class Fish {
         return this.meta.iconDark;
     }
 
+    get hasIconDark(): boolean {
+        return this.meta.hasIconDark;
+    }
+
     get description(): string {
         return this.meta.description;
     }
@@ -69,7 +76,7 @@ export class Fish {
 
     get body(): string {
         if (this._body == undefined) {
-            this._body = fs.readFileSync(`${process.cwd()}/src/app/software/body/${this.id}.md`).toString();
+            this._body = fs.readFileSync(`${process.cwd()}/src/software/body/${this.id}.md`).toString();
         }
         return <string>this._body;
     }

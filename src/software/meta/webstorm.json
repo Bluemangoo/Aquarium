@@ -3,7 +3,7 @@
   "icon": "/static/icon/webstorm.svg",
   "description": "最智能的 JavaScript IDE",
   "site": "https://www.jetbrains.com/webstorm/",
-  "tag": [
+  "tags": [
     "IDE",
     "Javascript",
     "Jetbrains"

@@ -2,6 +2,7 @@
 @import "global/_index.css";
 @import "icon/_index.css";
 @import "partial/_index.css";
+@import "var/_index.css";
 
 @tailwind base;
 @tailwind components;

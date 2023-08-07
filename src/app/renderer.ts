@@ -13,7 +13,9 @@ class Renderer {
                     keywords: fish.tags.join(","),
                     description: fish.description
                 },
-                fish
+                data: {
+                    fish
+                }
             },
             {
                 filename: process.cwd() + template
@@ -30,7 +32,9 @@ class Renderer {
                     keywords: "",
                     description: "Aquarium, 一个简单、易用的软件站。"
                 },
-                bucket
+                data: {
+                    bucket
+                }
             },
             {
                 filename: process.cwd() + template

@@ -1,0 +1,77 @@
+.fs-xxx-large {
+    font-size: xxx-large;
+}
+
+.fs-xx-large {
+    font-size: xx-large;
+}
+
+.fs-x-large {
+    font-size: x-large;
+}
+
+.fs-large {
+    font-size: large;
+}
+
+.fs-larger {
+    font-size: larger;
+}
+
+.fs-medium {
+    font-size: medium;
+}
+
+.fs-small {
+    font-size: small;
+}
+
+.fs-smaller {
+    font-size: smaller;
+}
+
+.fs-x-small {
+    font-size: x-small;
+}
+
+.fs-xx-small {
+    font-size: xx-small;
+}
+
+.f-black {
+    color: var(--font-black);
+}
+
+.f-lighter-black {
+    color: var(--font-lighter-black);
+}
+
+.f-x-lighter-black {
+    color: var(--font-x-lighter-black);
+}
+
+.f-light {
+    color: var(--font-light);
+}
+
+.f-darker-light {
+    color: var(--font-darker-light);
+}
+
+.f-x-darker-light {
+    color: var(--font-x-darker-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark\:f-light {
+        color: var(--font-light);
+    }
+
+    .dark\:f-darker-light {
+        color: var(--font-darker-light);
+    }
+
+    .dark\:f-x-darker-light {
+        color: var(--font-x-darker-light);
+    }
+}

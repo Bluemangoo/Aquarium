@@ -1,0 +1,33 @@
+<div class="mb-12 h-30 p-2 flex flex-nowrap">
+    <div>
+        <a href="/fish/<%= data.fish.id ;%>">
+            <div id="icon-fish-<%= data.fish.id; %>" class="icon h-20 w-20">
+            </div>
+        </a>
+    </div>
+    <div class="ml-10">
+        <a href="/fish/<%= data.fish.id %>">
+            <h3 class="fs-x-large font-bold f-black dark:f-light">
+                <%= data.fish.name; %>
+            </h3>
+        </a>
+        <a href="/fish/<%= data.fish.id %>">
+            <div class="max-h-6 w-auto overflow-hidden overflow-ellipsis f-lighter-black dark:f-darker-light">
+                <%= data.fish.description %>
+            </div>
+        </a>
+        <div class="flex flex-nowrap mt-1">
+            <%
+            let tag = "";
+            for (var i = 0; i < data.fish.tags.length; i++) {
+                tag += include("./piece/tag.ejs", {
+                    data: {
+                        tag: data.fish.tags[i]
+                    }
+                });
+            }
+            %>
+            <%- tag %>
+        </div>
+    </div>
+</div>

@@ -4,6 +4,7 @@ class Bucket {
     add(software: Fish) {
         this.map[software.id] = software;
         this.fishes[software.id] = software;
+        this.fishesList[this.fishesList.length] = software;
         for (const alias of software.alias) {
             this.map[alias] = software;
         }
@@ -15,6 +16,7 @@ class Bucket {
 
     private map: { [key: string]: Fish } = {};
     public fishes: { [key: string]: Fish } = {};
+    public fishesList: Fish[] = [];
 }
 
 const bucket = new Bucket();

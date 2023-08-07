@@ -1,0 +1,26 @@
+
+.w-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .w-container {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .w-container {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .w-container {
+        padding-left: 18rem;
+        padding-right: 18rem;
+    }
+}

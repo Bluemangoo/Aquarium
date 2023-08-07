@@ -32,8 +32,14 @@ module.exports = {
             "background-dark-100": "#000000",
             "background-dark-90": "#111111",
             "background-dark-80": "#181a1b",
+            "background-dark-70": "#252d38",
             "background-light-10": "#f8faff",
-            "background-light-0": "#ffffff"
+            "background-light-0": "#ffffff",
+            "font-black": "#2C3E50",
+            "font-lighter-black": "#718096",
+            "font-light": "#c4c6c9",
+            "font-darker-light": "#a7a9ad",
+            "font-x-darker-light": "#77797d"
         }
     },
     plugins: [

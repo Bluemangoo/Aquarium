@@ -3,7 +3,7 @@
   "icon": "/static/icon/clion.svg",
   "description": "C 和 C++ 跨平台 IDE",
   "site": "https://www.jetbrains.com/clion/",
-  "tag": [
+  "tags": [
     "IDE",
     "C/C++",
     "Jetbrains"

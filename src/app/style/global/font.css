@@ -1,5 +1,6 @@
 body {
     color: #2C3E50;
+    font-family: var(--font-family-sans-serif);
 }
 
 @media (prefers-color-scheme: dark) {

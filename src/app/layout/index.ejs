@@ -1,8 +1,46 @@
 <html lang="zh">
-<%- include("./_partials/head.ejs", {page}) %>
+<head>
+    <%- include("./_partials/head.ejs", {page}) %>
+    <style>
+        <%
+        let rowsStyle = "";
+        data.bucket.fishesList.forEach(fish => {
+            rowsStyle += `
+                    #icon-fish-${fish.id}{
+                        background-image: url("${fish.icon}");
+                    }`;
+            if (fish.hasIconDark){
+                rowsStyle+=`
+                        @media (prefers-color-scheme: dark) {
+                            #icon-fish-${fish.id}{
+                                background-image: url("${fish.iconDark}");
+                            }
+                        }`;
+            }
+        });
+        %>
+        <%- rowsStyle; %>
+    </style>
+</head>
 <body class="bg-background-light-10 dark:bg-background-dark-80">
 <header>
     <%- include("./_partials/header/navbar.ejs") %>
+    <%- include("./_partials/header/banner.ejs") %>
 </header>
+<main>
+    <div class="w-container">
+        <div class="board dark:bg-background-dark-70">
+            <div class="pl-6 pr-6">
+                <%
+                let rows = "";
+                data.bucket.fishesList.forEach(fish => {
+                    rows += include("./_partials/main/row.ejs", { data: { fish } });
+                });
+                %>
+                <%- rows; %>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>

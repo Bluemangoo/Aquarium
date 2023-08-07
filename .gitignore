@@ -16,3 +16,5 @@ pnpm.lock
 
 # Prebuild
 /src/prebuild/keep.ts
+/css
+/fish

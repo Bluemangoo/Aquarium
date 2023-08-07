@@ -1,0 +1,30 @@
+.board {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+    padding: 4.5rem 1.25rem;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .board {
+        padding-left: 4.375rem;
+        padding-right: 4.375rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .board {
+        padding-left: 5.625rem;
+        padding-right: 5.625rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .board {
+        padding-left: 6.25rem;
+        padding-right: 6.25rem;
+    }
+}
