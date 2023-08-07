@@ -8,7 +8,7 @@ import { Fish } from "../../types/fish";
 router.pattern(/\/fish\/[a-z0-9]+\/?/, async function(data, response) {
     response.contentType = CONTENT_TYPE.HTML;
     const name = data.url.split("/")[2];
-    response.response = checkPrebuildFileOr(`fish/${name}.html`, () => {
+    response.response = checkPrebuildFileOr(`fish/${name}/index.html`, () => {
         let fish: Fish = bucket.fishes?.[name];
         if (fish == null) {
             fish = bucket.get(name);
