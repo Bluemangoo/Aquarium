@@ -1,0 +1,36 @@
+console.log(
+<html lang="zh">
+<head>
+    <%- include("./_partials/head.ejs", {page}) %>
+    <style>
+        <%
+            let style = "";
+                style += `
+                        #icon-fish-${data.fish.id}{
+                            background-image: url("${data.fish.icon}");
+                        }`;
+                if (data.fish.hasIconDark){
+                    style+=`
+                            @media (prefers-color-scheme: dark) {
+                                #icon-fish-${data.fish.id}{
+                                    background-image: url("${data.fish.iconDark}");
+                                }
+                            }`;
+                    }
+        %>
+        <%- style%>
+    </style>
+</head>
+<body class="bg-background-light-10 dark:bg-background-dark-80">
+<header>
+    <%- include("./_partials/header/navbar.ejs") %>
+</header>
+<main>
+    <%- include("./_partials/main/detail-bar.ejs", {data: {fish: data.fish}}) %>
+    <div class="w-container">
+        <div class="board dark:bg-background-dark-70">
+        </div>
+    </div>
+</main>
+</body>
+</html>

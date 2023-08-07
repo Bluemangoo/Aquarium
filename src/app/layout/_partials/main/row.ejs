@@ -20,7 +20,7 @@
             <%
             let tag = "";
             for (var i = 0; i < data.fish.tags.length; i++) {
-                tag += include("./piece/tag.ejs", {
+                tag += include("./component/tag.ejs", {
                     data: {
                         tag: data.fish.tags[i]
                     }
