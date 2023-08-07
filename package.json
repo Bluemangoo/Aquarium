@@ -11,8 +11,8 @@
     "axios": "^1.4.0",
     "ejs": "^3.1.9",
     "tailwindcss": "^3.3.3",
-    "vclight": "^1.1.1",
-    "vclight-router": "^1.1.6",
+    "vclight": "^1.2.0",
+    "vclight-router": "^1.1.8",
     "vercel": "^31.0.1"
   },
   "devDependencies": {

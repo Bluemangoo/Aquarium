@@ -2,7 +2,7 @@ import VCLightRouter, { RequestContext, ResponseContext } from "vclight-router";
 import CONTENT_TYPE from "../enums/CONTENT_TYPE";
 import { ServerResponse } from "http";
 import { VercelRequest } from "@vercel/node";
-import VCLight, { Response } from "vclight";
+import VCLight, { VCLightResponse } from "vclight";
 
 export type ApiRequestContext = RequestContext & {
     fish: string
@@ -19,18 +19,18 @@ class ApiRouter extends VCLightRouter {
 
     /**
      * @deprecated
-     * @param event
-     * @param fn
+     * @param _event
+     * @param _fn
      */
-    public on(event: string, fn: (data: RequestContext, response: ResponseContext) => void) {
+    public on(_event: string, _fn: (data: RequestContext, response: ResponseContext) => void) {
     }
 
     /**
      * @deprecated
-     * @param pattern
-     * @param fn
+     * @param _pattern
+     * @param _fn
      */
-    public pattern(pattern: RegExp, fn: (data: RequestContext, response: ResponseContext) => void) {
+    public pattern(_pattern: RegExp, _fn: (data: RequestContext, response: ResponseContext) => void) {
     }
 
     public api(event: string, fn: (data: ApiRequestContext, response: ResponseContext) => void) {
@@ -53,7 +53,7 @@ class ApiRouter extends VCLightRouter {
     }
 
 
-    _500(data: RequestContext, response: ResponseContext) {
+    _500(_data: RequestContext, response: ResponseContext) {
         response.response = {
             code: 500,
             msg: `An error was occurred`
@@ -61,7 +61,7 @@ class ApiRouter extends VCLightRouter {
         response.contentType = CONTENT_TYPE.JSON;
     }
 
-    public get(event: string): (data: RequestContext, response: ResponseContext) => void {
+    public get(event: string): (data: RequestContext, response: ResponseContext) => Promise<void> {
         if (this.events?.[event]) {
             return this.events?.[event];
         }
@@ -70,11 +70,11 @@ class ApiRouter extends VCLightRouter {
             return this.events?.[(event + "/")];
         }
 
-        return this._404;
+        return this.events["404"];
     }
 
 
-    async process(request: VercelRequest, response: ServerResponse, responseContent: Response, app: VCLight): Promise<void> {
+    async process(request: VercelRequest, response: ServerResponse, responseContent: VCLightResponse, _app: VCLight): Promise<void> {
         if (this.broken) {
             return;
         }
@@ -82,9 +82,9 @@ class ApiRouter extends VCLightRouter {
         //finding process function
         const parsedUrl = new URL(`https://foo.bar${request.url}`);
         let splitUrl = parsedUrl.pathname.split("/");
-        let fn: (data: ApiRequestContext, response: ResponseContext) => void;
+        let fn: (data: ApiRequestContext, response: ResponseContext) => Promise<void>;
         if (splitUrl.length < 4) {
-            fn = this._404;
+            fn = this.events["404"];
         } else {
             fn = this.get("/" + splitUrl.slice(4).join("/") + "/");
         }
@@ -102,6 +102,7 @@ class ApiRouter extends VCLightRouter {
             })(),
             cookies: request.cookies,
             method: <string>request.method,
+            headers: request.headers,
             fish: splitUrl[3]
         };
         const responseContext = new ResponseContext(responseContent);
