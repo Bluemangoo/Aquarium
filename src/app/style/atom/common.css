@@ -9,3 +9,13 @@
 .top-18 {
     top: 4.5rem;
 }
+
+.h-full-w {
+    height: 100vw;
+}
+
+@media (min-width: 768px) {
+    .md\:h-2\/5-w {
+        height: 40vw;
+    }
+}
