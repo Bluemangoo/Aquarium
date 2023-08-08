@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import bucket from "../software/bucket";
 import renderer from "../app/renderer";
+import * as htmlMinifier from "html-minifier";
 
 const keepPath = process.cwd() + "/src/prebuild/keep.ts";
 
@@ -45,11 +46,20 @@ function keepDir(dir: string) {
     }
 }
 
+function minify(data: string): string {
+    return htmlMinifier.minify(data, {
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true
+    });
+}
+
 mkdir("dist");
 
 {
     const path = `index.html`;
-    const data = renderer.index();
+    const data = minify(renderer.index());
     write(path, data);
 }
 
@@ -59,11 +69,11 @@ mkdir("fish");
 for (const fish of bucket.fishesList) {
     mkdir("fish/" + fish.id);
     const path = `fish/${fish.id}/index.html`;
-    const data = renderer.detail(fish);
+    const data = minify(renderer.detail(fish));
     write(path, data);
 }
 
-keepFile("index.html")
+keepFile("index.html");
 keepDir("src/app/layout");
 keepDir("fish");
 keepDir("css");
