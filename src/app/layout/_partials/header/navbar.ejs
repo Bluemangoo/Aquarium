@@ -7,31 +7,67 @@
                     <span class="ml-2 font-extrabold">Aquarium</span>
                 </a>
             </div>
-            <div id="navbar-menu" class="ml-auto">
-                <div class="pt-4 pb-4 center flex flex-nowrap ">
-                    <div id="navbar-searchbox"
-                         class="rounded-full border-2 border-b-background-dark-80 dark:border-b-background-light-0 backdrop-blur-2xl p-1 w-56 h-8 mr-5 flex flex-nowrap">
-                        <button class="button-none icon icon-search h-5 w-5 mb-1 mr-1.5"></button>
-                        <label for="search"></label>
-                        <input
-                                type="text"
-                                id="search"
-                                class="input-none w-auto"
-                                autocomplete="off"
-                        >
+            <div id="navbar-menu" class="ml-auto h-16 center">
+                <div class="pt-4 pb-4 h-16 center flex">
+                    <div class="hidden md:flex md:flex-nowrap">
+                        <div class="rounded-full border-2 border-b-background-dark-80 dark:border-b-background-light-0 backdrop-blur-2xl p-1 w-56 h-8 mr-5 flex flex-nowrap">
+                            <button class="button-none icon icon-search h-5 w-5 mb-1 mr-1.5"
+                                    onclick="search()"></button>
+                            <label for="search"></label>
+                            <input
+                                    type="text"
+                                    id="search"
+                                    class="input-none w-auto"
+                                    autocomplete="off"
+                            >
+                        </div>
+                        <div class="mr-5">
+                            <a href="https://github.com/Bluemangoo/Aquarium" target="_blank">
+                                <div class="icon icon-github h-6 w-6"></div>
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="/settings" target="_self">
+                                <div class="icon icon-settings h-7 w-7"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div id="navbar-github" class="mr-5">
-                        <a href="https://github.com/Bluemangoo/Aquarium" target="_blank">
-                            <div class="icon icon-github h-6 w-6"></div>
-                        </a>
+                    <div class="md:hidden">
+                        <button id="navbar-menu-button" class="button-none icon icon-menu h-8 w-8">
+                        </button>
                     </div>
-                    <div id="navbar-settings" class="">
-                        <a href="/settings" target="_self">
-                            <div class="icon icon-settings h-7 w-7"></div>
-                        </a>
+                    <div id="navbar-menu-mobile" class="hidden absolute top-16 right-2">
+                        <div class="pl-4 pr-4 pt-6 pb-6 blurry border-1 rounded-2xl">
+                            <div class="mb-3">
+                                <a href="https://github.com/Bluemangoo/Aquarium" target="_blank" class="flex">
+                                    <div class="icon icon-github h-6 w-6 mr-4"></div>
+                                    Github
+                                </a>
+                            </div>
+                            <div class="mb-3">
+                                <a href="/settings" target="_self" class="flex">
+                                    <div class="icon icon-settings h-7 w-7 mr-3"></div>
+                                    设置
+                                </a>
+                            </div>
+                            <div class="rounded-full border-2 border-b-background-dark-80 dark:border-b-background-light-0 backdrop-blur-2xl p-1 h-8 flex flex-nowrap">
+                                <button class="button-none icon icon-search h-5 w-5 mb-1 mr-1.5"
+                                        onclick="search()"></button>
+                                <label for="search"></label>
+                                <input
+                                        type="text"
+                                        id="search"
+                                        class="input-none w-auto"
+                                        autocomplete="off"
+                                >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        navbarMenu();
+    </script>
 </div>

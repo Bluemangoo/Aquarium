@@ -38,6 +38,48 @@
     font-size: xx-small;
 }
 
+@media (min-width: 768px) {
+    .md\:fs-xxx-large {
+        font-size: xxx-large;
+    }
+
+    .md\:fs-xx-large {
+        font-size: xx-large;
+    }
+
+    .md\:fs-x-large {
+        font-size: x-large;
+    }
+
+    .md\:fs-large {
+        font-size: large;
+    }
+
+    .md\:fs-larger {
+        font-size: larger;
+    }
+
+    .md\:fs-medium {
+        font-size: medium;
+    }
+
+    .md\:fs-small {
+        font-size: small;
+    }
+
+    .md\:fs-smaller {
+        font-size: smaller;
+    }
+
+    .md\:fs-x-small {
+        font-size: x-small;
+    }
+
+    .md\:fs-xx-small {
+        font-size: xx-small;
+    }
+}
+
 .f-black {
     color: var(--font-black);
 }

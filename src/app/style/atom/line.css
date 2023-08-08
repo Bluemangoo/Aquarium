@@ -1,0 +1,9 @@
+.line-h-4 {
+    line-height: 1rem;
+}
+
+@media (min-width: 768px) {
+    .md\:line-h-6 {
+        line-height: 1.5rem;
+    }
+}

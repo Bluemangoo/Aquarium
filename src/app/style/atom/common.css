@@ -1,7 +1,11 @@
-.h-160{
+.h-160 {
     height: 40rem;
 }
 
-.border-1{
+.border-1 {
     border-width: 1px;
+}
+
+.top-18 {
+    top: 4.5rem;
 }

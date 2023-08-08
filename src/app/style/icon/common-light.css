@@ -2,6 +2,10 @@
     background-image: url("/static/img/light/github.svg");
 }
 
+.icon-menu {
+    background-image: url("/static/img/light/menu.svg");
+}
+
 .icon-search {
     background-image: url("/static/img/light/search.svg");
 }

@@ -3,6 +3,10 @@
         background-image: url("/static/img/dark/github.svg");
     }
 
+    .icon-menu {
+        background-image: url("/static/img/dark/menu.svg");
+    }
+
     .icon-search {
         background-image: url("/static/img/dark/search.svg");
     }
