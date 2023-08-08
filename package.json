@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^1.4.0",
     "ejs": "^3.1.9",
+    "markdown-it": "^13.0.1",
     "tailwindcss": "^3.3.3",
     "vclight": "^1.2.0",
     "vclight-router": "^1.1.8",

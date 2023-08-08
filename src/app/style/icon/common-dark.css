@@ -1,4 +1,8 @@
 @media (prefers-color-scheme: dark) {
+    .icon-download {
+        background-image: url("/static/img/dark/download.svg");
+    }
+
     .icon-github {
         background-image: url("/static/img/dark/github.svg");
     }

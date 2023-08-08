@@ -1,3 +1,7 @@
+.icon-download {
+    background-image: url("/static/img/light/download.svg");
+}
+
 .icon-github {
     background-image: url("/static/img/light/github.svg");
 }

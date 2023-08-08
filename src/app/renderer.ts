@@ -11,7 +11,8 @@ class Renderer {
                 page: {
                     title: `${fish.name} - Aquarium`,
                     keywords: fish.tags.join(","),
-                    description: fish.description
+                    description: fish.description,
+                    type: "detail"
                 },
                 data: {
                     fish
@@ -30,7 +31,8 @@ class Renderer {
                 page: {
                     title: `Aquarium`,
                     keywords: "",
-                    description: "Aquarium, 一个简单、易用的软件站。"
+                    description: "Aquarium, 一个简单、易用的软件站。",
+                    type: "index"
                 },
                 data: {
                     bucket
@@ -49,7 +51,8 @@ class Renderer {
                 page: {
                     title: `404 - Aquarium`,
                     keywords: "",
-                    description: "404 Error"
+                    description: "404 Error",
+                    type: "404"
                 }
             },
             {

@@ -76,7 +76,13 @@ export class Fish {
 
     get body(): string {
         if (this._body == undefined) {
-            this._body = fs.readFileSync(`${process.cwd()}/src/software/body/${this.id}.md`).toString();
+            this._body = require("markdown-it")({
+                html: true,
+                linkify: true,
+                typographer: true
+            }).render(
+                fs.readFileSync(`${process.cwd()}/src/software/body/${this.id}.md`).toString()
+            );
         }
         return <string>this._body;
     }
