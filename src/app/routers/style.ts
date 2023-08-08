@@ -2,7 +2,7 @@ import router from "../router";
 import CONTENT_TYPE from "../../enums/CONTENT_TYPE";
 import * as fs from "fs";
 
-router.on("/css/main.css", async function (data, response) {
+router.on("/css/main.css", async function (_data, response) {
     response.contentType = CONTENT_TYPE.CSS;
     response.response = fs.readFileSync(process.cwd() + "/css/main.css").toString();
 });

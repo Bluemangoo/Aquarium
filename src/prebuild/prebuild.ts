@@ -63,6 +63,8 @@ for (const fish of bucket.fishesList) {
     write(path, data);
 }
 
+keepFile("index.html")
 keepDir("src/app/layout");
 keepDir("fish");
 keepDir("css");
+keepDir("js");

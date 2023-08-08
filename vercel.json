@@ -16,6 +16,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "js/**/*",
+      "use": "@vercel/static"
+    },
+    {
       "src": "fish/**/*",
       "use": "@vercel/static"
     },
