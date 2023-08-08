@@ -39,7 +39,9 @@ module.exports = {
             "font-lighter-black": "#718096",
             "font-light": "#c4c6c9",
             "font-darker-light": "#a7a9ad",
-            "font-x-darker-light": "#77797d"
+            "font-x-darker-light": "#77797d",
+            "link": "#0366d6",
+            "link-hover": "#30a9de"
         }
     },
     plugins: [

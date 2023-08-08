@@ -5,6 +5,8 @@
     --font-light: #c4c6c9;
     --font-darker-light: #a7a9ad;
     --font-x-darker-light: #77797d;
+    --link: #0366d6;
+    --link-hover: #30a9de;
     --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
