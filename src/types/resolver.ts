@@ -1,7 +1,7 @@
 export interface Query {
     version?: string;
     type?: string;
-    from?: string;
+    source?: string;
 }
 
 export type GetVersion = (query: Query) => Promise<string>

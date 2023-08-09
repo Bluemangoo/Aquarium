@@ -1,8 +1,9 @@
 import { Fish } from "../../types/fish";
 import Jetbrains from "../../utils/jetbrains";
 import bucket from "../bucket";
+import { SourceTag } from "../../types/sourceTag";
 
-const sub = new Fish("pycharm",["pycharmp"]);
+const sub = new Fish("pycharm", ["pycharmp"]);
 
 const clion = new Jetbrains("PCP");
 
@@ -13,5 +14,9 @@ sub.getUrl = function(query) {
 sub.getVersion = function(query) {
     return clion.getVersion(query);
 };
+
+sub.sources["Jetbrains"] = new SourceTag({
+    official: true
+});
 
 bucket.add(sub);

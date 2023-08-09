@@ -2,6 +2,7 @@
 import { Fish } from "../../types/fish";
 import FileCacher from "../../types/fileCacher";
 import bucket from "../bucket";
+import { SourceTag } from "../../types/sourceTag";
 
 const sub = new Fish("everything");
 
@@ -18,5 +19,9 @@ sub.getVersion = async function(query) {
     }
     return ver[0];
 };
+
+sub.sources["voidtools"] = new SourceTag({
+    official: true
+});
 
 bucket.add(sub);

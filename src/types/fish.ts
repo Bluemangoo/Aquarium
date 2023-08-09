@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import { GetUrl, GetVersion } from "./resolver";
+import { SourceTag } from "./sourceTag";
 
 type Meta = {
     name: string;
@@ -89,6 +90,8 @@ export class Fish {
 
     getVersion: GetVersion = async () => "Not support";
     getUrl: GetUrl = async () => "";
+
+    sources: { [key: string]: SourceTag } = {};
 
     readonly id: string;
     private _meta: Meta | undefined;

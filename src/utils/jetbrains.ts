@@ -15,7 +15,7 @@ export default class Jetbrains {
 
     async getUrl(query: Query) {
         const versions = await this.versions;
-        if (query.from == "jetbrains-cn") {
+        if (query.source == "jetbrains-cn") {
             return "https://download.jetbrains.com.cn" + versions[0]["downloads"]["windows"]["link"].slice(30);
         }
         return versions[0]["downloads"]["windows"]["link"];
