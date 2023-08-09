@@ -61,6 +61,7 @@ function minify(data: string): string {
     write(path, data);
 }
 
+mkdir("settings");
 {
     const path = `settings/index.html`;
     const data = minify(renderer.settings());
