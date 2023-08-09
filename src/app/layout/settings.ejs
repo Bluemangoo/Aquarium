@@ -1,0 +1,54 @@
+<html lang="zh">
+<head>
+    <%- include("./_partials/head.ejs", {page}) %>
+</head>
+<body class="bg-background-light-10 dark:bg-background-dark-80">
+<header>
+    <%- include("./_partials/header/navbar.ejs") %>
+</header>
+<main>
+    <div class="w-container">
+        <div class="board mt-20 rem mb-4">
+            <h1 class="fs-xx-large font-bold mb-4">
+                设置
+            </h1>
+            <p>
+                这里暂时什么都没有哦。
+            </p>
+            <p>
+                以后会有的。
+            </p>
+
+            <h2 class="fs-x-large font-bold mt-8 mb-4">
+                关于这个站
+            </h2>
+            <div class="markdown">
+                <p>
+                    本站不提供任何下载，一切下载链接在解析后都会重定向到对应的下载源。
+                    <br>
+                    软件相关问题与本站无关。
+                </p>
+                <p>
+                    前端用的是 <a href="https://ejs.co/" target="_blank">ejs</a> (没错硬写的) ，
+                    <br>
+                    后端是 <a href="https://github.com/Bluemangoo/VCLight" target="_blank">VCLight</a> 。
+                    <br>
+                    本站托管在 Vercel 上面 (用了亿点点黑科技) 。
+                </p>
+                <p>
+                    开源仓库: <a href="https://github.com/Bluemangoo/Aquarium" target="_blank">Github</a>
+                    <br>
+                    欢迎大家对此项目做出贡献！
+                </p>
+                <p>
+                    作者: <a href="https://github.com/Bluemangoo" target="_blank">Bluemangoo</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <%- include("./_partials/footer.ejs") %>
+</footer>
+</body>
+</html>

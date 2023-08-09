@@ -44,6 +44,25 @@ class Renderer {
         );
     }
 
+    settings(template: string = "/src/app/layout/settings.ejs") {
+        return ejs.render(
+            fs.readFileSync(process.cwd() + template).toString(),
+            {
+                page: {
+                    title: `设置 - Aquarium`,
+                    keywords: "",
+                    description: "",
+                    type: "settings"
+                },
+                data: {
+                }
+            },
+            {
+                filename: process.cwd() + template
+            }
+        );
+    }
+
     _404(template: string = "/src/app/layout/404.ejs") {
         return ejs.render(
             fs.readFileSync(process.cwd() + template).toString(),

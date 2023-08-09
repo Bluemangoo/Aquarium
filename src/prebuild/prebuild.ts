@@ -55,11 +55,15 @@ function minify(data: string): string {
     });
 }
 
-mkdir("dist");
-
 {
     const path = `index.html`;
     const data = minify(renderer.index());
+    write(path, data);
+}
+
+{
+    const path = `settings/index.html`;
+    const data = minify(renderer.settings());
     write(path, data);
 }
 
@@ -74,6 +78,7 @@ for (const fish of bucket.fishesList) {
 }
 
 keepFile("index.html");
+keepFile("settings/index.html");
 keepDir("src/app/layout");
 keepDir("fish");
 keepDir("css");
