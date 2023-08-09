@@ -27,14 +27,16 @@
 <main>
     <%- include("./_partials/main/detail-bar.ejs", {data: {fish: data.fish}}) %>
     <div class="w-container">
-        <div class="board markdown dark:bg-background-dark-70">
-            <h2 id="body">
-                介绍
-            </h2>
-            <%- data.fish.body; %>
-            <h2 id="download">
-                下载
-            </h2>
+        <div class="board markdown mt-[-3rem] mb-4">
+            <div class="mt-[-1rem] md:mt-auto">
+                <h2 id="body">
+                    介绍
+                </h2>
+                <%- data.fish.body; %>
+                <h2 id="download">
+                    下载
+                </h2>
+            </div>
         </div>
         <script>
             renderMarkdown();

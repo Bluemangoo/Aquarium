@@ -4,9 +4,8 @@ function renderMarkdown() {
 
         //h2
         const h2Elements = div.querySelectorAll("h2");
-        h2Elements.forEach((h2) => {
-            h2.classList.add("fs-xx-large");
-            h2.insertAdjacentElement("afterend", document.createElement("hr"));
+        h2Elements.forEach((e) => {
+            e.insertAdjacentElement("afterend", document.createElement("hr"));
         });
 
     });

@@ -1,7 +1,88 @@
-.markdown{
+.markdown {
     color: var(--font-black);
 }
 
 @media (prefers-color-scheme: dark) {
-    color: var(--font-light);
+    .markdown {
+        color: var(--font-light);
+    }
+}
+
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.markdown h2 {
+    margin-top: 2rem;
+    font-size: xx-large;
+}
+
+.markdown h3 {
+    font-size: x-large;
+}
+
+.markdown h4 {
+    font-size: larger;
+}
+
+.markdown h5,
+.markdown h6 {
+    font-size: large;
+}
+
+.markdown p {
+    line-height: 2rem;
+}
+
+.markdown hr {
+    margin-bottom: 1rem;
+    color: var(--font-x-lighter-black);
+}
+
+@media (prefers-color-scheme: dark) {
+    .markdown hr {
+        color: var(--font-x-darker-light );
+    }
+}
+
+.markdown a {
+    color: var(--link);
+    transition: 0.4s;
+}
+
+.markdown a:hover {
+    color: var(--link-hover);
+}
+
+.markdown ul,
+.markdown ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 2em;
+    list-style: initial;
+}
+
+.markdown ul ul,
+.markdown ol ul,
+.markdown ul ol,
+.markdown ol ol {
+  list-style-type: circle;
+}
+
+.markdown ul ul ol,
+.markdown ul ol ol,
+.markdown ol ul ol,
+.markdown ol ol ol {
+    list-style: initial;
+}
+
+.markdown ul.no-list,
+.markdown ol.no-list {
+    padding: 0;
+    list-style-type: none;
 }
