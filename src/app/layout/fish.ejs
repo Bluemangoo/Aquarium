@@ -27,32 +27,55 @@
 <main>
     <%- include("./_partials/main/detail-bar.ejs", {data: {fish: data.fish}}) %>
     <div class="w-container">
-        <div class="board markdown mt-[-3rem] mb-4">
-            <div class="mt-[-1rem] md:mt-auto">
-                <h2 id="body">
-                    介绍
-                </h2>
-                <%- data.fish.body; %>
-                <h2 id="download">
-                    下载
-                </h2>
-                <%
-                let downloads = "";
-                for (const sourceI in data.fish.sources) {
-                    const source = data.fish.sources[sourceI]
-                    downloads += "<p>";
-                    downloads += include("./_partials/main/component/source.ejs", {
-                        data: {
-                            fish: data.fish,
-                            source: sourceI,
-                            sourceTag: source
-                        }
-                    })
-                    downloads += "</p>"
-                }
-                %>
-                <%- downloads %>
-
+        <div class="board mt-[-3rem] mb-4">
+            <div class="markdown">
+                <div class="mt-[-1rem] md:mt-auto">
+                    <h2 id="body">
+                        介绍
+                    </h2>
+                    <%- data.fish.body; %>
+                    <h2 id="download">
+                        下载
+                    </h2>
+                    <%
+                    let downloads = "";
+                    for (const sourceI in data.fish.sources) {
+                        const source = data.fish.sources[sourceI];
+                        downloads += "<p>";
+                        downloads += include("./_partials/main/component/source.ejs", {
+                            data: {
+                                fish: data.fish,
+                                source: sourceI,
+                                sourceTag: source
+                            }
+                        });
+                        downloads += "</p>";
+                    }
+                    %>
+                    <%- downloads; %>
+                </div>
+            </div>
+            <hr class="mt-14 mb-6 text-font-lighter-black md:text-font-darker-light">
+            <div>
+                <div class="fs-larger font-black mb-2">
+                    <%= data.fish.name ;%>
+                </div>
+                <div class="flex mt-1">
+                    <%
+                    let tag = "";
+                    for (var i = 0; i < data.fish.tags.length; i++) {
+                        tag += include("./_partials/main/component/tag.ejs", {
+                            data: {
+                                tag: data.fish.tags[i]
+                            }
+                        });
+                    }
+                    %>
+                    <%- tag; %>
+                </div>
+                <div class="italic mt-2">
+                    部分介绍来源于官方页面，请在官方页面获取详细信息。
+                </div>
             </div>
         </div>
         <script>

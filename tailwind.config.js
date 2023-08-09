@@ -37,6 +37,7 @@ module.exports = {
             "background-light-0": "#ffffff",
             "font-black": "#2C3E50",
             "font-lighter-black": "#718096",
+            "font-x-lighter-black": "#91a0b6",
             "font-light": "#c4c6c9",
             "font-darker-light": "#a7a9ad",
             "font-x-darker-light": "#77797d",
