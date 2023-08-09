@@ -1,0 +1,22 @@
+<div class="flex flex-nowrap">
+    <% if(data.sourceTag.official){ %>
+        <div class="text-green mr-2">
+            官方
+        </div>
+    <% } %>
+    <% if(data.sourceTag.slow){ %>
+        <div class="text-red mr-2">
+            慢
+        </div>
+    <% } %>
+    <% if(data.sourceTag.web){ %>
+        <div class="text-lightblue mr-2">
+            Web
+        </div>
+    <% } %>
+    <div>
+        <a href="/api/v2/<%=data.fish.id%>/download?source=<%=data.source%>" target="_blank">
+            <%=data.sourceTag.displayName%>
+        </a>
+    </div>
+</div>

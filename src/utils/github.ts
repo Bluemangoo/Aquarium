@@ -8,8 +8,6 @@ export default function github(origin: string, from?: string): string {
             return "https://github.91chi.fun/" + origin;
         case "yanqishui":
             return "https://gh2.yanqishui.work/" + origin;
-        case "gh2333":
-            return "https://gx2333.ml/" + origin;
         case "ghproxy":
             return "https://gxproxy.com/" + origin;
         case "ghproxymirror":

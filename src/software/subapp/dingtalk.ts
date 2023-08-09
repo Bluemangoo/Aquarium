@@ -15,7 +15,7 @@ sub.getVersion = function(_query) {
     return d.data.then(v => v["win"]["package"]["version"]);
 };
 
-sub.sources["Aliyun"] = new SourceTag({
+sub.sources["aliyun"] = new SourceTag("阿里云", {
     official: true
 });
 

@@ -6,12 +6,14 @@ function s<T>(d: T, i?: T): T {
 }
 
 export class SourceTag {
-    constructor(sourceTag: SourceTagI) {
+    constructor(displayName: string, sourceTag: SourceTagI) {
+        this.displayName = displayName;
         this.official = s(this.official, sourceTag.official);
         this.slow = s(this.slow, sourceTag.slow);
         this.web = s(this.web, sourceTag.web);
     }
 
+    displayName: string;
     official: boolean = false;
     slow: boolean = false;
     web: boolean = false;

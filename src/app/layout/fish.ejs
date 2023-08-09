@@ -36,6 +36,23 @@
                 <h2 id="download">
                     下载
                 </h2>
+                <%
+                let downloads = "";
+                for (const sourceI in data.fish.sources) {
+                    const source = data.fish.sources[sourceI]
+                    downloads += "<p>";
+                    downloads += include("./_partials/main/component/source.ejs", {
+                        data: {
+                            fish: data.fish,
+                            source: sourceI,
+                            sourceTag: source
+                        }
+                    })
+                    downloads += "</p>"
+                }
+                %>
+                <%- downloads %>
+
             </div>
         </div>
         <script>

@@ -20,7 +20,7 @@ sub.getVersion = async function(query) {
     return ver[0];
 };
 
-sub.sources["voidtools"] = new SourceTag({
+sub.sources["voidtools"] = new SourceTag("voidtools", {
     official: true
 });
 

@@ -15,7 +15,7 @@ sub.getVersion = function(query) {
     return clion.getVersion(query);
 };
 
-sub.sources["Jetbrains"] = new SourceTag({
+sub.sources["jetbrains"] = new SourceTag("Jetbrains", {
     official: true
 });
 

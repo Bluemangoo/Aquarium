@@ -8,7 +8,7 @@ sub.getUrl = async function(query) {
     return "https://dl-static.iqiyi.com/hz/IQIYIsetup_z40.exe";
 };
 
-sub.sources["Iqiyi"] = new SourceTag({
+sub.sources["iqiyi"] = new SourceTag("爱奇艺", {
     official: true
 });
 

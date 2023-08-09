@@ -8,7 +8,7 @@ sub.getUrl = async function(query) {
     return "https://c2rsetup.officeapps.live.com/c2r/downloadEdge.aspx?platform=Default&source=EdgeStablePage&Channel=Stable&language=zh-cn";
 };
 
-sub.sources["Microsoft"] = new SourceTag({
+sub.sources["microsoft"] = new SourceTag("Microsoft", {
     official: true,
     web: true
 });

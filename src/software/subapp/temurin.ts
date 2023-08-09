@@ -5,6 +5,8 @@ import axios from "axios";
 import notNull from "../../utils/notNull";
 import * as path from "path";
 import github from "../../utils/github";
+import { SourceTag } from "../../types/sourceTag";
+import addGithubTag from "../../utils/githubTag";
 
 const sub = new Fish("temurin", ["adoptium", "adoptium-jdk", "temurin-jdk"]);
 
@@ -36,5 +38,12 @@ sub.getVersion = async function(query) {
     const parse1 = url.split("hotspot_");
     return parse1[parse1.length - 1].slice(0, -4);
 };
+
+sub.sources["github"] = new SourceTag("GitHub", {
+        official: true
+    }
+);
+
+addGithubTag(sub.sources);
 
 bucket.add(sub);

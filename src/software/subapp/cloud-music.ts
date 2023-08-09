@@ -8,7 +8,7 @@ sub.getUrl = async function(query) {
     return "https//music.163.com/api/pc/package/download/latest";
 };
 
-sub.sources["Netease"] = new SourceTag({
+sub.sources["netease"] = new SourceTag("网易", {
     official: true
 });
 

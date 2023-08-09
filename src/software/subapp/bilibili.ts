@@ -14,7 +14,7 @@ sub.getVersion = async function(query) {
     return data.data["data"][0]["version"];
 };
 
-sub.sources["Bilibili"] = new SourceTag({
+sub.sources["bilibili"] = new SourceTag("哔哩哔哩", {
     official: true
 });
 
