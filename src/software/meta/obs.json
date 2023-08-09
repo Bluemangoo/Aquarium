@@ -1,0 +1,9 @@
+{
+  "name": "OBS Studio",
+  "icon": "/static/icon/obs.png",
+  "description": "免费且开源的用于视频录制以及直播串流的软件。",
+  "site": "https://obsproject.com/",
+  "tags": [
+    "工具"
+  ]
+}

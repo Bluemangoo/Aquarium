@@ -1,0 +1,9 @@
+{
+  "name": "酷狗音乐",
+  "icon": "/static/icon/kugou.png",
+  "description": "酷狗电脑版",
+  "site": "https://download.kugou.com/",
+  "tags": [
+    "音乐"
+  ]
+}
