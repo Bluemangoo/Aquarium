@@ -29,7 +29,7 @@
     <div class="w-container">
         <div class="board mt-[-3rem] mb-4">
             <div class="markdown">
-                <div class="mt-[-1rem] md:mt-auto">
+                <div class="mt-[-3rem] md:mt-[-2rem]">
                     <h2 id="body">
                         介绍
                     </h2>
@@ -58,9 +58,9 @@
             <hr class="mt-14 mb-6 text-font-lighter-black md:text-font-darker-light">
             <div>
                 <div class="fs-larger font-black mb-2">
-                    <%= data.fish.name ;%>
+                    <%= data.fish.name; %>
                 </div>
-                <div class="flex mt-1">
+                <div class="flex mt-1 flex-wrap gap-2">
                     <%
                     let tag = "";
                     for (var i = 0; i < data.fish.tags.length; i++) {
@@ -74,7 +74,7 @@
                     <%- tag; %>
                 </div>
                 <div class="italic mt-2">
-                    部分介绍来源于官方页面，请在官方页面获取详细信息。
+                    部分信息来源于官方页面，请在官方页面获取详细信息。
                 </div>
             </div>
         </div>

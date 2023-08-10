@@ -1,22 +1,22 @@
-<div class="mb-8 md:mb-12 h-20 md:h-30 p-2 flex flex-nowrap">
+<div class="mb-6 min-h-[5rem] md:min-h-[7.5rem] p-2 flex flex-nowrap">
     <div>
-        <a href="/fish/<%= data.fish.id; %>">
+        <a href="/fish/<%= data.fish.id; %>" target="_blank">
             <div id="icon-fish-<%= data.fish.id; %>" class="icon h-16 w-16 md:h-20 md:w-20">
             </div>
         </a>
     </div>
     <div class="ml-7 md:ml-10">
-        <a href="/fish/<%= data.fish.id %>">
+        <a href="/fish/<%= data.fish.id %>" target="_blank">
             <h3 class="fs-medium md:fs-x-large font-bold text-font-black dark:text-font-light link-hover">
                 <%= data.fish.name; %>
             </h3>
         </a>
-        <a href="/fish/<%= data.fish.id %>">
+        <a href="/fish/<%= data.fish.id %>" target="_blank">
             <div class="fs-x-small line-h-4 md:line-h-6 md:fs-medium max-h-8 md:max-h-12 w-auto overflow-y-hidden overflow-ellipsis text-font-lighter-black dark:text-font-darker-light link-hover">
                 <%= data.fish.description %>
             </div>
         </a>
-        <div class="flex mt-1">
+        <div class="flex mt-1 flex-wrap gap-2">
             <%
             let tag = "";
             for (var i = 0; i < data.fish.tags.length; i++) {
