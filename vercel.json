@@ -20,11 +20,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "fish/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "index.html",
+      "src": "robot.txt",
       "use": "@vercel/static"
     }
   ],
