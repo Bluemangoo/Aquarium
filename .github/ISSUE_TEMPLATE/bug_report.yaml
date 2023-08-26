@@ -1,0 +1,67 @@
+name: 报告问题
+description: 发现了一些问题吗？在这里！
+labels: ["bug"]
+title: "[BUG] <title>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 问题说明
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: 是什么问题呢？
+      description: 描述一下你碰到的问题。
+
+  - type: checkboxes
+    validations:
+      required: true
+    attributes:
+      label: 在哪里碰到问题的？
+      options:
+        - label: 前端(网页)
+        - label: 后端(API)
+        - label: 其它
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 怎么复现呢？
+      description: 请详细描述一下复现步骤。
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 开发状态
+
+  - type: checkboxes
+    attributes:
+      label: 自己开发吗？
+      options:
+        - label: 我会自己提 PR 来完成
+
+  - type: textarea
+    attributes:
+      label: 已有的 PR
+      description: >-
+        可以回头用编辑来填这个。
+        
+  - type: markdown
+    attributes:
+      value: |
+        ## 其它
+
+  - type: textarea
+    attributes:
+      label: 其它信息
+      description: 还有什么补充的吗？请写在这里吧！
