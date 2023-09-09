@@ -8,8 +8,8 @@ const sub = new Fish("everything");
 
 const page = new FileCacher("https://www.voidtools.com/");
 
-sub.getUrl = async function(query) {
-    return "https//www.voidtools.com" + (await page.data).match(/(?<=class="button" href=").*(?=">Download Installer 64-bit<\/a>)/)[0];
+sub.getUrl = async function(_query) {
+    return "https://www.voidtools.com" + (await page.data).match(/(?<=class="button" href=").*(?=">Download Installer 64-bit<\/a>)/)[0];
 };
 
 sub.getVersion = async function(query) {
