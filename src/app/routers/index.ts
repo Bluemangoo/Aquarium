@@ -5,5 +5,5 @@ import checkPrebuildFileOr from "../../utils/checkPrebuildFile";
 
 router.on("/", async function(data, response) {
     response.contentType = CONTENT_TYPE.HTML;
-    response.response = checkPrebuildFileOr("index.html", renderer.index);
+    response.response = checkPrebuildFileOr("dist/index.html", renderer.index);
 });

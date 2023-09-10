@@ -4,9 +4,7 @@ import renderer from "../app/renderer";
 import * as htmlMinifier from "html-minifier";
 
 const keepPath = process.cwd() + "/src/prebuild/keep.ts";
-
-fs.writeFileSync(keepPath, "import * as fs from \"fs\";\n");
-
+// lib
 function keepFile(projPath: string) {
     fs.appendFileSync(keepPath, `fs.readFileSync(process.cwd() + "/${projPath}");\n`);
 }
@@ -55,32 +53,34 @@ function minify(data: string): string {
     });
 }
 
+// prebuild start
+fs.writeFileSync(keepPath, "import * as fs from \"fs\";\n");
+
+mkdir("dist")
+
 {
-    const path = `index.html`;
+    const path = `dist/index.html`;
     const data = minify(renderer.index());
     write(path, data);
 }
 
-mkdir("settings");
+mkdir("dist/settings");
 {
-    const path = `settings/index.html`;
+    const path = `dist/settings/index.html`;
     const data = minify(renderer.settings());
     write(path, data);
 }
 
-mkdir("fish");
+mkdir("dist/fish");
 
 
 for (const fish of bucket.fishesList) {
-    mkdir("fish/" + fish.id);
-    const path = `fish/${fish.id}/index.html`;
+    mkdir("dist/fish/" + fish.id);
+    const path = `dist/fish/${fish.id}/index.html`;
     const data = minify(renderer.detail(fish));
     write(path, data);
 }
 
-keepFile("index.html");
-keepFile("settings/index.html");
+keepFile("dist");
 keepDir("src/app/layout");
-keepDir("fish");
-keepDir("css");
 keepDir("js");

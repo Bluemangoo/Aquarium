@@ -8,12 +8,12 @@ import { Fish } from "../../types/fish";
 router.pattern(/\/fish\/[a-z0-9]+\/?/, async function(data, response) {
     response.contentType = CONTENT_TYPE.HTML;
     const name = data.url.split("/")[2];
-    response.response = checkPrebuildFileOr(`fish/${name}/index.html`, () => {
+    response.response = checkPrebuildFileOr(`dist/fish/${name}/index.html`, () => {
         let fish: Fish = bucket.fishes?.[name];
         if (fish == null) {
             fish = bucket.get(name);
             if (fish == null) {
-                return checkPrebuildFileOr("404.html", renderer._404);
+                return checkPrebuildFileOr("dist/404.html", renderer._404);
             }
             response.redirect = true;
             response.status = 302;
