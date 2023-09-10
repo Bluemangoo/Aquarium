@@ -2,8 +2,31 @@ import * as fs from "fs";
 import bucket from "../software/bucket";
 import renderer from "../app/renderer";
 import * as htmlMinifier from "html-minifier";
+import * as uglifyJs from "uglify-js";
+import * as CleanCSS from "clean-css";
 
 const keepPath = process.cwd() + "/src/prebuild/keep.ts";
+
+const cleanCSS = new CleanCSS({
+    level: {
+        2: {
+            mergeAdjacentRules: true,
+            mergeIntoShorthands: true,
+            mergeMedia: true,
+            mergeNonAdjacentRules: true,
+            mergeSemantically: false,
+            overrideProperties: true,
+            removeEmpty: true,
+            reduceNonAdjacentRules: true,
+            removeDuplicateFontRules: true,
+            removeDuplicateMediaBlocks: true,
+            removeDuplicateRules: true,
+            removeUnusedAtRules: false,
+            restructureRules: false
+        }
+    }
+});
+
 // lib
 function keepFile(projPath: string) {
     fs.appendFileSync(keepPath, `fs.readFileSync(process.cwd() + "/${projPath}");\n`);
@@ -44,7 +67,7 @@ function keepDir(dir: string) {
     }
 }
 
-function minify(data: string): string {
+function minifyHTML(data: string): string {
     return htmlMinifier.minify(data, {
         removeComments: true,
         collapseWhitespace: true,
@@ -53,34 +76,58 @@ function minify(data: string): string {
     });
 }
 
+function minifyJS(data: string): string {
+    return uglifyJs.minify(data, {
+        mangle: true
+    }).code;
+}
+
+function minifyCSS(data: string): string {
+    return cleanCSS.minify(data).styles;
+}
+
 // prebuild start
 fs.writeFileSync(keepPath, "import * as fs from \"fs\";\n");
 
-mkdir("dist")
+mkdir("dist");
 
 {
     const path = `dist/index.html`;
-    const data = minify(renderer.index());
+    const data = minifyHTML(renderer.index());
     write(path, data);
 }
 
 mkdir("dist/settings");
 {
     const path = `dist/settings/index.html`;
-    const data = minify(renderer.settings());
+    const data = minifyHTML(renderer.settings());
     write(path, data);
 }
 
 mkdir("dist/fish");
-
-
 for (const fish of bucket.fishesList) {
     mkdir("dist/fish/" + fish.id);
     const path = `dist/fish/${fish.id}/index.html`;
-    const data = minify(renderer.detail(fish));
+    const data = minifyHTML(renderer.detail(fish));
     write(path, data);
 }
 
+mkdir("dist/js");
+{
+    const list = getAllFilesInDirectory("src/app/js");
+    for (const k of list) {
+        const path = "dist" + k.slice(7);
+        const data = minifyJS(fs.readFileSync(process.cwd() + "/" + k).toString());
+        write(path, data);
+    }
+}
+
+{
+    const path = "dist/css/main.css";
+    const data = minifyCSS(fs.readFileSync(process.cwd() + "/" + path).toString());
+    write(path, data);
+}
+
+
 keepFile("dist");
 keepDir("src/app/layout");
-keepDir("js");

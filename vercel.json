@@ -12,11 +12,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "js/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "robot.txt",
+      "src": "robots.txt",
       "use": "@vercel/static"
     }
   ],

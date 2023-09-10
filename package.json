@@ -21,10 +21,12 @@
     "@types/html-minifier": "^4.0.2",
     "@types/node": "^20.4.5",
     "@vercel/node": "^2.14.3",
+    "clean-css": "^5.3.2",
     "html-minifier": "^4.0.0",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "uglify-js": "^3.17.4"
   }
 }
