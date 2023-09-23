@@ -4,7 +4,7 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "serve": "vercel dev",
-    "serve:css": "tailwindcss -i ./src/app/style/main.css -o ./dist/css/main.css --watch",
+    "serve:css": "tailwindcss -i ./src/app/style/main.css -o ./css/main.css --watch",
     "postinstall": "npx tailwindcss -i ./src/app/style/main.css -o ./dist/css/main.css&ts-node src/prebuild/prebuild.ts"
   },
   "dependencies": {

@@ -16,3 +16,7 @@ pnpm.lock
 
 # Prebuild
 /src/prebuild/keep.ts
+
+# Dev cache
+/css
+/js
