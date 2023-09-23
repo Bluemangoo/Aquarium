@@ -8,25 +8,25 @@
     "postinstall": "npx tailwindcss -i ./src/app/style/main.css -o ./dist/css/main.css&ts-node src/prebuild/prebuild.ts"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "ejs": "^3.1.9",
     "markdown-it": "^13.0.1",
     "tailwindcss": "^3.3.3",
     "vclight": "^1.2.0",
     "vclight-router": "^1.1.8",
-    "vercel": "^31.0.1"
+    "vercel": "^32.3.1"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.2",
-    "@types/html-minifier": "^4.0.2",
-    "@types/node": "^20.4.5",
-    "@vercel/node": "^2.14.3",
+    "@types/html-minifier": "^4.0.3",
+    "@types/node": "^20.6.3",
+    "@vercel/node": "^3.0.6",
     "clean-css": "^5.3.2",
     "html-minifier": "^4.0.0",
-    "prettier": "^3.0.1",
-    "prettier-plugin-tailwindcss": "^0.4.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "uglify-js": "^3.17.4"
   }
 }
