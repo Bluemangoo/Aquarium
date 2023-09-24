@@ -41,6 +41,8 @@ body:
       label: 已有的 PR
       description: >-
         可以回头用编辑来填这个。
+      value: |
+        - #<pull-id>
 
   - type: markdown
     attributes:

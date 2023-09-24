@@ -2,7 +2,7 @@
 
 ### 做了什么呢？
 
-描述一下你的贡献。
+<!-- 描述一下你的贡献。 -->
 
 ### 是什么方面的？
 - [ ] 前端(网页)
@@ -13,9 +13,11 @@
 
 ### 链接到 Issue
 
-使用链接语法链接到 Issue
+- Fix #<issue-id>
 
-文档: https://docs.github.com/zh/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue
+<!-- 使用链接语法链接到 Issue
+
+文档: https://docs.github.com/zh/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue -->
 
 ## 其它
 
@@ -23,8 +25,8 @@
 
 - [ ] 我已经阅读了贡献须知
 
-贡献须知: https://github.com/Bluemangoo/Aquarium/blob/master/CONTRIBUTING.md
+<!-- 贡献须知: https://github.com/Bluemangoo/Aquarium/blob/master/CONTRIBUTING.md -->
 
 ### 其它信息
 
-还有什么补充的吗？请写在这里吧！
+<!-- 还有什么补充的吗？请写在这里吧！ -->
