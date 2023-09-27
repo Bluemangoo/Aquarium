@@ -1,7 +1,7 @@
-import apiRouter from "../../apiRouter";
-import bucket from "../../../software/bucket";
+import apiRouter from "../../../apiRouter";
+import bucket from "../../../../software/bucket";
 
-apiRouter.fishApi("/version/", async function(request, response) {
+apiRouter.fishApi("/url/", async function(request, response) {
     const fish = bucket.get(request.fish);
     if (fish == null) {
         apiRouter._404(request, response);
@@ -9,7 +9,7 @@ apiRouter.fishApi("/version/", async function(request, response) {
         response.response = {
             code: 200,
             fish: fish.name,
-            version: await fish.getVersion(request.query)
+            version: await fish.getUrl(request.query)
         };
     }
 });
