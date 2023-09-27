@@ -1,0 +1,9 @@
+{
+  "name": "QQ 音乐",
+  "icon": "/static/icon/qq-music.svg",
+  "description": "QQ 音乐是腾讯公司推出的一款网络音乐服务产品",
+  "site": "https://y.qq.com/",
+  "tags": [
+    "音乐"
+  ]
+}

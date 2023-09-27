@@ -13,5 +13,7 @@ import "./subapp/obs";
 import "./subapp/otp";
 import "./subapp/pycharm";
 import "./subapp/python";
+import "./subapp/qq";
+import "./subapp/qq-music";
 import "./subapp/temurin";
 import "./subapp/webstorm";

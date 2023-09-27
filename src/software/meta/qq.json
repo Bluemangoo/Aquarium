@@ -1,0 +1,9 @@
+{
+  "name": "腾讯 QQ",
+  "icon": "/static/icon/qq.png",
+  "description": "腾讯公司推出的免费多平台即时通信软件",
+  "site": "https://im.qq.com/",
+  "tags": [
+    "即时通讯"
+  ]
+}
