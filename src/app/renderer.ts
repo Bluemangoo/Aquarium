@@ -14,6 +14,9 @@ class Renderer {
                     description: fish.description,
                     type: "detail"
                 },
+                navbar: {
+                    search: true
+                },
                 data: {
                     fish
                 }
@@ -33,6 +36,9 @@ class Renderer {
                     keywords: "",
                     description: "Aquarium, 一个简单、易用的软件站。",
                     type: "index"
+                },
+                navbar: {
+                    search: true
                 },
                 data: {
                     bucket
@@ -54,8 +60,31 @@ class Renderer {
                     description: "",
                     type: "settings"
                 },
-                data: {
-                }
+                navbar: {
+                    search: true
+                },
+                data: {}
+            },
+            {
+                filename: process.cwd() + template
+            }
+        );
+    }
+
+    search(template: string = "/src/app/layout/search.ejs") {
+        return ejs.render(
+            fs.readFileSync(process.cwd() + template).toString(),
+            {
+                page: {
+                    title: `搜索 - Aquarium`,
+                    keywords: "",
+                    description: "",
+                    type: "search"
+                },
+                navbar: {
+                    search: false
+                },
+                data: {}
             },
             {
                 filename: process.cwd() + template
@@ -72,7 +101,11 @@ class Renderer {
                     keywords: "",
                     description: "404 Error",
                     type: "404"
-                }
+                },
+                navbar: {
+                    search: true
+                },
+                data: {}
             },
             {
                 filename: process.cwd() + template

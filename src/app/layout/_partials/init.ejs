@@ -1,0 +1,11 @@
+<script>
+    <% if(page.type !== "search"){ %>
+    initSearchBox();
+    <% } %>
+    <% if(page.type === "index"){ %>
+    initBanner();
+    <% } %>
+    <% if(page.type === "search"){ %>
+    initSearch();
+    <% } %>
+</script>

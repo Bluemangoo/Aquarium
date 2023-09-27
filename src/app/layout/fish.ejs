@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <%- include("./_partials/head.ejs", {page}) %>
@@ -22,7 +23,7 @@
 </head>
 <body class="bg-primary-800 dark:bg-background-dark-90">
 <header>
-    <%- include("./_partials/header/navbar.ejs") %>
+    <%- include("./_partials/header/navbar.ejs", {navbar}) %>
 </header>
 <main>
     <%- include("./_partials/main/detail-bar.ejs", {data: {fish: data.fish}}) %>
@@ -86,5 +87,6 @@
 <footer>
     <%- include("./_partials/footer.ejs") %>
 </footer>
+    <%- include("./_partials/init.ejs", {page}) %>
 </body>
 </html>

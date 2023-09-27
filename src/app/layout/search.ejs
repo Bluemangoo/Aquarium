@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <%- include("./_partials/head.ejs", {page}) %>
+</head>
+<body class="bg-background-light-10 dark:bg-background-dark-80">
+<header>
+    <%- include("./_partials/header/navbar.ejs", {navbar}) %>
+</header>
+<main>
+    <div class="h-container w-container">
+        <div class="ml-auto mr-auto pt-20 pb-20">
+            <div class="rounded-full border-2 border-b-background-dark-80 dark:border-b-background-light-0 backdrop-blur-2xl p-2 w-[32rem] h-16 flex center flex-nowrap ml-auto mr-auto">
+                <button class="button-none icon icon-search h-10 w-10 mr-4"
+                        onclick="search()"></button>
+                <form>
+                    <label for="search"></label>
+                    <input
+                            type="text"
+                            placeholder="搜一下就能找到"
+                            id="search"
+                            class="input-none fs-x-large"
+                            autocomplete="off"
+                    >
+                </form>
+            </div>
+        </div>
+        <div class="board mb-4">
+            <div class="pl-1 pr-1 md:pl-6 md:pr-6 pb-4" id="search-value">
+                加载中，稍等一会儿哦。
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <%- include("./_partials/footer.ejs") %>
+</footer>
+    <%- include("./_partials/init.ejs", {page}) %>
+</body>
+</html>

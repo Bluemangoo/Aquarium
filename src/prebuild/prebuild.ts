@@ -113,6 +113,14 @@ mkdir("dist/settings");
     write(path, data);
 }
 
+// `/search/`
+mkdir("dist/search");
+{
+    const path = `dist/search/index.html`;
+    const data = minifyHTML(renderer.search());
+    write(path, data);
+}
+
 // `/fish/*`
 mkdir("dist/fish");
 for (const fish of bucket.fishesList) {

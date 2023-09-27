@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <%- include("./_partials/head.ejs", {page}) %>
@@ -24,7 +25,7 @@
 </head>
 <body class="bg-primary-800 dark:bg-background-dark-90">
 <header>
-    <%- include("./_partials/header/navbar.ejs") %>
+    <%- include("./_partials/header/navbar.ejs", {navbar}) %>
     <%- include("./_partials/header/banner.ejs") %>
 </header>
 <main>
@@ -45,5 +46,6 @@
 <footer>
     <%- include("./_partials/footer.ejs") %>
 </footer>
+    <%- include("./_partials/init.ejs", {page}) %>
 </body>
 </html>

@@ -1,3 +1,10 @@
 <script src="/js/main.js"></script>
-<%-page.type==="index"?"<script src='/js/index.js'></script>":""%>
-<%-page.type==="detail"?"<script src='/js/page.js'></script>":""%>
+<% if(page.type === "index"){ %>
+    <script src='/js/index.js'></script>
+<% } %>
+<% if(page.type === "detail"){ %>
+    <script src='/js/page.js'></script>
+<% } %>
+<% if(page.type === "search"){ %>
+    <script src='/js/search.js'></script>
+<% } %>

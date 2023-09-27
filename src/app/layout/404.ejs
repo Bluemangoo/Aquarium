@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <%- include("./_partials/head.ejs", {page}) %>
 </head>
 <body class="bg-background-light-10 dark:bg-background-dark-80">
 <header>
-    <%- include("./_partials/header/navbar.ejs") %>
+    <%- include("./_partials/header/navbar.ejs", {navbar}) %>
 </header>
 <main>
-    <div class="w-container">
-        <div class="board mt-20 rem mb-4">
+    <div class="h-container w-container">
+        <div class="board mb-4">
             <h1 class="fs-xx-large font-bold mb-4">
                 404 Error
             </h1>
@@ -21,5 +22,6 @@
 <footer>
     <%- include("./_partials/footer.ejs") %>
 </footer>
+    <%- include("./_partials/init.ejs", {page}) %>
 </body>
 </html>

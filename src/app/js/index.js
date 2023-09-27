@@ -9,6 +9,6 @@ const bannerTexts = [
     "你也想在这里写点东西？提 PR 吧！"
 ];
 
-function renderBanner() {
+function initBanner() {
     document.getElementById("banner-text").innerHTML = bannerTexts.sample();
 }
