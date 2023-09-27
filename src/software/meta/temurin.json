@@ -1,7 +1,7 @@
 {
   "name": "Eclipse Temurin",
-  "icon": "https://adoptium.net/images/temurin-light.png",
-  "iconDark": "https://adoptium.net/images/temurin-dark.png",
+  "icon": "/static/icon/temurin-light.png",
+  "iconDark": "/static/icon/temurin-dark.png",
   "description": "Eclipse Temurin 是由基于 OpenJDK 的开源 Java SE 产生的构建版本。",
   "site": "https://adoptium.net/temurin/",
   "tags": [
