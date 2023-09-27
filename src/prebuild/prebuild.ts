@@ -4,6 +4,7 @@ import renderer from "../app/renderer";
 import * as htmlMinifier from "html-minifier";
 import * as uglifyJs from "uglify-js";
 import * as CleanCSS from "clean-css";
+import searchFile from "../utils/searchFile";
 
 const keepPath = process.cwd() + "/src/prebuild/keep.ts";
 
@@ -137,6 +138,12 @@ mkdir("dist/js");
     const path = "dist/css/main.css";
     const data = minifyCSS(fs.readFileSync(process.cwd() + "/" + path).toString());
     write(path, data);
+}
+
+// `/api/search.json`
+mkdir("dist/api");
+{
+    write("dist/api/search.json", JSON.stringify(searchFile()));
 }
 
 
