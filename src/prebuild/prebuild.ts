@@ -91,12 +91,20 @@ fs.writeFileSync(keepPath, "import * as fs from \"fs\";\n");
 
 mkdir("dist");
 
+// `/index.html`
 {
     const path = `dist/index.html`;
     const data = minifyHTML(renderer.index());
     write(path, data);
 }
+// `/404.html`
+{
+    const path = `dist/404.html`;
+    const data = minifyHTML(renderer._404());
+    write(path, data);
+}
 
+// `/settings/`
 mkdir("dist/settings");
 {
     const path = `dist/settings/index.html`;
@@ -104,6 +112,7 @@ mkdir("dist/settings");
     write(path, data);
 }
 
+// `/fish/*`
 mkdir("dist/fish");
 for (const fish of bucket.fishesList) {
     mkdir("dist/fish/" + fish.id);
@@ -112,6 +121,7 @@ for (const fish of bucket.fishesList) {
     write(path, data);
 }
 
+// `/js/*`
 mkdir("dist/js");
 {
     const list = getAllFilesInDirectory("src/app/js");
@@ -122,6 +132,7 @@ mkdir("dist/js");
     }
 }
 
+// `/css/main.css`
 {
     const path = "dist/css/main.css";
     const data = minifyCSS(fs.readFileSync(process.cwd() + "/" + path).toString());
