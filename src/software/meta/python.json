@@ -1,0 +1,11 @@
+{
+  "name": "Python",
+  "icon": "/static/icon/python.svg",
+  "description": "一种高级、通用、解释型编程语言，以简洁、易读的语法和强大的标准库著称",
+  "site": "https://www.python.org/",
+  "tags": [
+    "运行时",
+    "开发工具包",
+    "开源"
+  ]
+}

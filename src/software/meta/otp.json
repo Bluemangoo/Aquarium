@@ -1,0 +1,10 @@
+{
+  "name": "Office Tool Plus",
+  "icon": "/static/icon/office-tool-plus.png",
+  "description": "一个强大且实用的 Office 部署工具",
+  "site": "https://otp.landian.vip/",
+  "tags": [
+    "工具",
+    "Office"
+  ]
+}
