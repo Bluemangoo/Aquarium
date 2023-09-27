@@ -1,7 +1,7 @@
 import apiRouter from "../../apiRouter";
 import bucket from "../../../software/bucket";
 
-apiRouter.api("/version/", async function(request, response) {
+apiRouter.fishApi("/version/", async function(request, response) {
     const fish = bucket.get(request.fish);
     if (fish == null) {
         apiRouter._404(request, response);

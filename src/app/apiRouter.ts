@@ -17,12 +17,11 @@ class ApiRouter extends VCLightRouter {
         });
     }
 
-    /**
-     * @deprecated
-     * @param _event
-     * @param _fn
-     */
-    public on(_event: string, _fn: (data: RequestContext, response: ResponseContext) => void) {
+    public on(event: string, fn: (data: RequestContext, response: ResponseContext) => void) {
+        if (this.events[event]) {
+            console.warn(`Warning: fish event ${event} have been redefined`);
+        }
+        this.events[event] = fn;
     }
 
     /**
@@ -33,16 +32,19 @@ class ApiRouter extends VCLightRouter {
     public pattern(_pattern: RegExp, _fn: (data: RequestContext, response: ResponseContext) => void) {
     }
 
-    public api(event: string, fn: (data: ApiRequestContext, response: ResponseContext) => void) {
-        if (this.events[event]) {
-            console.warn(`Warning: event ${event} have been redefined`);
+    public fishApi(event: string, fn: (data: ApiRequestContext, response: ResponseContext) => void) {
+        const fishEvent = "/fish" + event;
+        if (this.events[fishEvent]) {
+            console.warn(`Warning: fish event ${event} have been redefined`);
         }
-        this.events[event] = fn;
+        this.events[fishEvent] = fn;
     }
 
     protected events: {
         [key: string]: any;
-    } = [];
+    } = {
+        "/404/": this._404
+    };
 
     _404(data: RequestContext, response: ResponseContext) {
         response.response = {
@@ -70,7 +72,7 @@ class ApiRouter extends VCLightRouter {
             return this.events?.[(event + "/")];
         }
 
-        return this.events["404"];
+        return this.events["/404/"];
     }
 
 
@@ -79,14 +81,27 @@ class ApiRouter extends VCLightRouter {
             return;
         }
 
+        let isFish = false;
+
         //finding process function
         const parsedUrl = new URL(`https://foo.bar${request.url}`);
         let splitUrl = parsedUrl.pathname.split("/");
         let fn: (data: ApiRequestContext, response: ResponseContext) => Promise<void>;
-        if (splitUrl.length < 4) {
-            fn = this.events["404"];
+        if (splitUrl.length < 3) {
+            fn = this.events["/404/"];
         } else {
-            fn = this.get("/" + splitUrl.slice(4).join("/") + "/");
+            if (splitUrl[3] == "fish") {
+                fn = this.get("/fish/" + splitUrl.slice(5).join("/") + "/");
+                if (fn != this.events["/404/"]) {
+                    if (splitUrl.length < 5) {
+                        fn = this.events["/404/"];
+                    } else {
+                        isFish = true;
+                    }
+                }
+            } else {
+                fn = this.get("/" + splitUrl.slice(3).join("/") + "/");
+            }
         }
 
         //prepare request data
@@ -103,7 +118,7 @@ class ApiRouter extends VCLightRouter {
             cookies: request.cookies,
             method: <string>request.method,
             headers: request.headers,
-            fish: splitUrl[3]
+            fish: isFish ? splitUrl[4] : ""
         };
         const responseContext = new ResponseContext(responseContent);
         responseContext.contentType = CONTENT_TYPE.JSON;
@@ -111,7 +126,8 @@ class ApiRouter extends VCLightRouter {
         //processing
         try {
             await fn(requestContext, responseContext);
-        } catch {
+        } catch (e) {
+            console.error(e);
             this._500(requestContext, responseContext);
         }
 
@@ -133,4 +149,4 @@ const apiRouter = new ApiRouter();
 
 export default apiRouter;
 
-import "./api"
+import "./api";
