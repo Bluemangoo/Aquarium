@@ -1,6 +1,6 @@
 name: 功能要求
 description: 我想要一些功能！
-labels: ["feature request"]
+labels: ["enhancement","new issue"]
 title: "[FEATURE REQUEST] <title>"
 body:
   - type: markdown

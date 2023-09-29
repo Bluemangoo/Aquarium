@@ -1,6 +1,6 @@
 name: 报告问题
 description: 发现了一些问题吗？在这里！
-labels: ["bug"]
+labels: ["bug","new issue"]
 title: "[BUG] <title>"
 body:
   - type: markdown
