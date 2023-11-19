@@ -1,4 +1,8 @@
 @media (prefers-color-scheme: dark) {
+    .icon-aquarium {
+        background-image: url("/static/img/dark/aquarium.svg");
+    }
+
     .icon-download {
         background-image: url("/static/img/dark/download.svg");
     }

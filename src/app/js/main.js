@@ -2,6 +2,21 @@ Array.prototype.sample = function() {
     return this[Math.floor(Math.random() * this.length)];
 };
 
+(async () => {
+    const favicon = document.querySelector("link[rel~='icon']");
+
+    function colorSchemeListener(mediaQueryList) {
+        if (mediaQueryList.matches) {
+            favicon.href = "/static/img/dark/aquarium.svg";
+        } else {
+            favicon.href = "/static/img/light/aquarium.svg";
+        }
+    }
+
+    colorSchemeListener(window.matchMedia("(prefers-color-scheme: dark)"));
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", colorSchemeListener);
+})();
+
 function navbarMenu() {
     const navbarMenuButton = document.getElementById("navbar-menu-button");
     const navbarMenuMobile = document.getElementById("navbar-menu-mobile");
@@ -18,10 +33,10 @@ function toSearchPage(collapse) {
     if (searchBox.value === "") {
         return;
     }
-    const param={
+    const param = {
         q: searchBox.value
-    }
-    window.open("/search?"+new URLSearchParams(param).toString(), "_blank");
+    };
+    window.open("/search?" + new URLSearchParams(param).toString(), "_blank");
 }
 
 function initSearchBox() {

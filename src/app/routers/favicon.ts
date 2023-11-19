@@ -1,7 +1,7 @@
 import router from "../router";
-import { readFileSync } from "fs";
 
-router.on("/favicon.ico", async function(data, response) {
-    response.contentType = "image/x-icon";
-    response.response = readFileSync(process.cwd() + "/src/app/public/favicon.ico");
-})
+router.on("/favicon.ico", async function(_data, response) {
+    response.status = 302;
+    response.redirect = true;
+    response.redirectUrl = "/static/img/light/aquarium.svg";
+});
