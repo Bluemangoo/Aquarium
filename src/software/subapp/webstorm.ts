@@ -5,14 +5,14 @@ import { SourceTag } from "../../types/sourceTag";
 
 const sub = new Fish("webstorm", ["WS"]);
 
-const clion = new Jetbrains("CL");
+const webstorm = new Jetbrains("WS");
 
 sub.getUrl = function(query) {
-    return clion.getUrl(query);
+    return webstorm.getUrl(query);
 };
 
 sub.getVersion = function(query) {
-    return clion.getVersion(query);
+    return webstorm.getVersion(query);
 };
 
 sub.sources["jetbrains"] = new SourceTag("Jetbrains", {
