@@ -7,9 +7,9 @@ Array.prototype.sample = function() {
 
     function colorSchemeListener(mediaQueryList) {
         if (mediaQueryList.matches) {
-            favicon.href = "/static/img/dark/aquarium.svg";
+            favicon.href = "/static/img/dark/aquarium.ico";
         } else {
-            favicon.href = "/static/img/light/aquarium.svg";
+            favicon.href = "/static/img/light/aquarium.ico";
         }
     }
 
