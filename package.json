@@ -8,25 +8,25 @@
     "postinstall": "npx tailwindcss -i ./src/app/style/main.css -o ./dist/css/main.css&ts-node src/prebuild/prebuild.ts"
   },
   "dependencies": {
-    "axios": "^1.5.0",
+    "axios": "^1.6.8",
     "ejs": "^3.1.9",
-    "markdown-it": "^13.0.1",
-    "tailwindcss": "^3.3.3",
+    "markdown-it": "^14.1.0",
+    "tailwindcss": "^3.4.1",
     "vclight": "^1.2.0",
     "vclight-router": "^1.1.8",
-    "vercel": "^32.3.1"
+    "vercel": "^33.6.1"
   },
   "devDependencies": {
-    "@types/ejs": "^3.1.2",
-    "@types/html-minifier": "^4.0.3",
-    "@types/node": "^20.6.3",
-    "@vercel/node": "^3.0.6",
-    "clean-css": "^5.3.2",
+    "@types/ejs": "^3.1.5",
+    "@types/html-minifier": "^4.0.5",
+    "@types/node": "^20.11.30",
+    "@vercel/node": "^3.0.24",
+    "clean-css": "^5.3.3",
     "html-minifier": "^4.0.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
     "uglify-js": "^3.17.4"
   }
 }
