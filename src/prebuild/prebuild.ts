@@ -5,6 +5,7 @@ import * as htmlMinifier from "html-minifier";
 import * as uglifyJs from "uglify-js";
 import * as CleanCSS from "clean-css";
 import searchFile from "../utils/searchFile";
+import sitemap from "../utils/sitemap";
 
 const keepPath = process.cwd() + "/src/prebuild/keep.ts";
 
@@ -152,6 +153,13 @@ mkdir("dist/js");
 mkdir("dist/api");
 {
     write("dist/api/search.json", JSON.stringify(searchFile()));
+}
+
+// `/sitemap.xml`
+{
+    const path = `dist/sitemap.xml`;
+    const data = sitemap();
+    write(path, data);
 }
 
 

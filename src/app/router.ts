@@ -12,6 +12,7 @@ import "./routers/favicon";
 import "./routers/fish";
 import "./routers/index";
 import "./routers/js";
-import "./routers/search"
+import "./routers/search";
 import "./routers/settings";
+import "./routers/sitemap";
 import "./routers/style";
