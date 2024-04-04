@@ -34,7 +34,7 @@ class Renderer {
                 page: {
                     title: `Aquarium`,
                     keywords: "",
-                    description: "Aquarium, 一个简单、易用的软件站。",
+                    description: "Aquarium是一个软件收集站点。它提供了安全、直接的下载链接，详细的软件信息和用户友好的搜索功能。作为一个开源项目，Aquarium欢迎任何人的参与和贡献，一同为用户提供最优质的下载体验。",
                     type: "index"
                 },
                 navbar: {
