@@ -4,10 +4,18 @@ import axios from "axios";
 import bucket from "../bucket";
 import { SourceTag } from "../../types/sourceTag";
 import checkInList from "../../utils/checkInList";
+import env from "../../utils/env";
+import getProxyUrl from "../../utils/getProxyUrl";
 
 const sub = new Fish("otp", ["office-tool-plus"]);
 
 sub.getUrl = async function(query) {
+    if (env.enableProxy) {
+        if (query.source == "proxy") {
+            return getProxyUrl("https://otp.landian.vip/redirect/download.php?type=runtime&site=github");
+        }
+    }
+
     const source = checkInList(
         query.source,
         "sdumirror",
@@ -39,5 +47,10 @@ sub.sources["onedrive"] = new SourceTag("OneDrive", {
 sub.sources["github"] = new SourceTag("GitHub", {
     official: true
 });
+
+if (env.enableProxy) {
+    sub.sources["proxy"] = new SourceTag("本站代理", {});
+}
+
 
 bucket.add(sub);

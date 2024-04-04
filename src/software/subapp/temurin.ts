@@ -7,6 +7,8 @@ import * as path from "path";
 import github from "../../utils/github";
 import { SourceTag } from "../../types/sourceTag";
 import addGithubTag from "../../utils/githubTag";
+import env from "../../utils/env";
+import getProxyUrl from "../../utils/getProxyUrl";
 
 const sub = new Fish("temurin", ["adoptium", "adoptium-jdk", "temurin-jdk"]);
 
@@ -15,22 +17,37 @@ sub.getUrl = async function(query: Query) {
     if (json == "") {
         throw new Error("Invalid version");
     }
-    let result: string;
+    let url: string;
 
     if (query.type == "zip") {
-        result = json[1]["binary"]["package"]["link"];
+        url = json[1]["binary"]["package"]["link"];
     } else {
-        result = json[1]["binary"]["installer"]["link"];
+        url = json[1]["binary"]["installer"]["link"];
+    }
+
+    let githubSource: string | undefined;
+
+
+    if (env.enableProxy && query.source == "proxy") {
+        githubSource = "github";
+    } else {
+        githubSource = query.source;
     }
 
 
     if (query.source === "tsinghua") {
-        result = "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/" + query.version + "/jdk/x64/windows/" + path.parse(result).name + (query.type === "zip" ? ".zip" : ".msi");
+        url = "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/" + query.version + "/jdk/x64/windows/" + path.parse(url).name + (query.type === "zip" ? ".zip" : ".msi");
     } else if (query.source != null) {
-        result = github(result, query.source);
+        url = github(url, githubSource);
     }
 
-    return result;
+    if (env.enableProxy) {
+        if (query.source == "proxy") {
+            return getProxyUrl(url);
+        }
+    }
+
+    return url;
 };
 
 sub.getVersion = async function(query) {
@@ -45,5 +62,9 @@ sub.sources["github"] = new SourceTag("GitHub", {
 );
 
 addGithubTag(sub.sources);
+
+if (env.enableProxy) {
+    sub.sources["proxy"] = new SourceTag("本站代理", {});
+}
 
 bucket.add(sub);

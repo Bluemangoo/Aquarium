@@ -4,6 +4,8 @@ import checkInList from "../../utils/checkInList";
 import axios from "axios";
 import { SourceTag } from "../../types/sourceTag";
 import bucket from "../bucket";
+import env from "../../utils/env";
+import getProxyUrl from "../../utils/getProxyUrl";
 
 const sub = new Fish("python");
 
@@ -11,7 +13,7 @@ sub.getUrl = async function(query) {
     const source = checkInList(
         query.source,
         "python",
-        ["python", "npmmirror"]
+        ["python", "npmmirror", ...(env.enableProxy ? ["proxy"] : [])]
     );
     const type = checkInList(
         query.type,
@@ -34,6 +36,11 @@ sub.getUrl = async function(query) {
         url = `${prefix}/python/${version}/python-${version}-embed-amd64.zip`;
     }
 
+    if (env.enableProxy) {
+        if (query.source == "proxy") {
+            return getProxyUrl(url);
+        }
+    }
     return url;
 };
 
@@ -50,5 +57,10 @@ sub.sources["python"] = new SourceTag("Python", {
     official: true
 });
 sub.sources["npmmirror"] = new SourceTag("npm mirror", {});
+
+
+if (env.enableProxy) {
+    sub.sources["proxy"] = new SourceTag("本站代理", {});
+}
 
 bucket.add(sub);
