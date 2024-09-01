@@ -5,7 +5,7 @@ import { SourceTag } from "../../types/sourceTag";
 const sub = new Fish("cloud-music", ["cloudmusic", "wangyiyunyinyue"]);
 
 sub.getUrl = async function(query) {
-    return "https//music.163.com/api/pc/package/download/latest";
+    return "https://music.163.com/api/pc/package/download/latest";
 };
 
 sub.sources["netease"] = new SourceTag("网易", {
